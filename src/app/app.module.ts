@@ -4,13 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormDispalyComponent } from './form-dispaly/form-dispaly.component';
-import { RepositoryHttpComponent } from './repository-http/repository-http.component';
+import { RepositoryComponent } from './repository/repository.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormDispalyComponent,
-    RepositoryHttpComponent
+    RepositoryComponent
   ],
   imports: [
     BrowserModule,
