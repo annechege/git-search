@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Repos } from '../repos';
+import { Repository } from '../repository-class/repository';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,11 @@ import { Repos } from '../repos';
 export class ReposService {
 
 
-  repos: Repos;
+  repos: Repository;
   userName: string;
 
   constructor(private http:HttpClient){
-    this.repos = new Repos("");
+    this.repos = new Repository("","","","","");
   }
 
   getRepoData(){
@@ -23,7 +23,7 @@ export class ReposService {
 
             this.repos.reposArray=response;
 
-            resolve()
+            resolve(response)
         },
         error=>{
                 this.repos.reposArray=[];

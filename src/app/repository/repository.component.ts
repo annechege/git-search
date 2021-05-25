@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import {HttpClient} from '@angular/common/http';
+import {Repository} from '../repository-class/repository'
+import { from } from 'rxjs';
+import {ReposService} from '../repos-http/repos.service'
 @Component({
-  sselector: 'app-repository',
+  selector: 'app-repository',
   templateUrl: './repository.component.html',
   providers: [ReposService],
   styleUrls: ['./repository.component.css']
@@ -27,7 +30,7 @@ export class RepositoryComponent implements OnInit {
         license: any;
       }
       let promise = new Promise((resolve,reject)=>{
-        this.http.get<ApiResponse>("https://api.github.com/repos/" + this.userName + "/" + this.repoName + "?access_token=" + environment.access_token).toPromise().then(response=>{
+        this.http.get<ApiResponse>("https://api.github.com/repos/" + this.userName + "/" + this.repoName).toPromise().then(response=>{
 
           this.repo.link = response.html_url
           this.repo.name = response.name
@@ -36,7 +39,7 @@ export class RepositoryComponent implements OnInit {
           this.repo.forks = response.forks
           this.repo.license = response.license
 
-        resolve();
+        resolve(response);
 
       },
       error=>{
@@ -62,5 +65,8 @@ export class RepositoryComponent implements OnInit {
       this.repoRequestService.repoLookup(this.userName);
       this.repoRequestService.getRepoData();
       this.repos = this.repoRequestService.repos;
+    }
+    ngOnInit() {
+
     }
 }

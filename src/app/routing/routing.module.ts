@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DisplayComponent } from '../display/display.component'
+import { FormDispalyComponent } from '../form-dispaly/form-dispaly.component';
 import { RepositoryComponent } from '../repository/repository.component'
 
 const routes: Routes = [
-  {path:"display",component:DisplayComponent},
+  {path:"form-display",component:FormDispalyComponent},
   {path:"repo",component:RepositoryComponent}
 ]
 

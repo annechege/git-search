@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-
+import {HttpClient} from '@angular/common/http';
+import {User} from '../user-class/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,8 +26,9 @@ export class UserService {
         avatar_url: any;
         html_url: any;
       }
+
       let promise = new Promise((resolve,reject)=>{
-        this.http.get<ApiResponse>(environment.apiUrl + this.userName + "?access_token=" + environment.access_token).toPromise().then(response=>{
+        this.http.get<ApiResponse>( "https://api.github.com/users/"+ this.userName ).toPromise().then(response=>{
 
           this.user.avatar = response.avatar_url
           this.user.username = response.login
@@ -38,19 +40,19 @@ export class UserService {
           this.user.link = response.html_url
 
 
-        resolve();
+        resolve(response);
 
       },
       error=>{
 
           this.user.avatar = "https://avatars1.githubusercontent.com/u/47349274?v=4"
-          this.user.username = "fuaad001"
-          this.user.name = "Hussein Fuaad"
-          this.user.bio = "Full-Stack Developer \r\nAndroid Developer\r\nCertified Chef\r\nRelationship Officer"
+          this.user.username = "annechege"
+          this.user.name = "annechege"
+          this.user.bio = "Full-Stack Developer"
           this.user.repositories = 22
           this.user.followers = 2
           this.user.following = 0
-          this.user.link = "https://github.com/fuaad001"
+          this.user.link = "https://github.com/annechege"
 
         reject(error);
 
