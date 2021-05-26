@@ -1,3 +1,9 @@
+<div class="input">
+  <form action="">
+    <input type="text" class="form-control" placeholder="Enter Username" [(ngModel)]="name" (keyup)="searchGit()">
+
+  </form>
+</div>
 <img id="avatar" src="{{Users.avatar_url}}" alt="profile pic" height="250px" width="250px">
                 <p>Username: <strong>{{Users.login}}</strong></p>
                 <p>Followers: <strong>{{Users.followers}}</strong></p>
