@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { User} from '../user-class/user'
+import { UserService } from '../user-http/user.service';
 @Component({
   selector: 'app-form-dispaly',
   templateUrl: './form-dispaly.component.html',

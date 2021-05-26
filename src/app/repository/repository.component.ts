@@ -14,7 +14,7 @@ export class RepositoryComponent implements OnInit {
   repo: Repository;
   userName: string;
   repoName: string;
-  repos: Repos;
+
 
   constructor(private http:HttpClient, private repoRequestService: ReposService){
     this.repo = new Repository("","","","","");
@@ -64,7 +64,7 @@ export class RepositoryComponent implements OnInit {
     repoLookup(){
       this.repoRequestService.repoLookup(this.userName);
       this.repoRequestService.getRepoData();
-      this.repos = this.repoRequestService.repos;
+      this.repo = this.repoRequestService.repos;
     }
     ngOnInit() {
 
