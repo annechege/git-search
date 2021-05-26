@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Repository} from '../repository-class/repository'
+import {Repo} from '../repository-class/repository'
 import { from } from 'rxjs';
 import {ReposService} from '../repos-http/repos.service'
 @Component({
