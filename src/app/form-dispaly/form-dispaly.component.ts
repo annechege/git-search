@@ -20,7 +20,7 @@ export class FormDispalyComponent implements OnInit {
     this.searchGit("annechege")
  }
 searchGit(searchTerm: string){
-  this.userHttpService.searchGits(searchTerm).then(
+  this.userHttpService.searchGit(searchTerm).then(
     (success)=>{
       this.Users = this.userHttpService.Users;
     },

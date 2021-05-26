@@ -8,12 +8,15 @@ import { Repo } from '../repository-class/repository';
   providedIn: 'root'
 })
 export class UserService {
+  searchGits(searchTerm: string) {
+    throw new Error('Method not implemented.');
+  }
 
   Users!: User;
 Repos:Repo[]=[]
 
 constructor (private http:HttpClient) { }
-searchGits(searchTerm:string){
+searchGit(searchTerm:string){
   interface userInterface{
     login:string,
     avatar_url:any,
