@@ -17,3 +17,9 @@
 a :hover{
   color: black;
 }
+.header
+{
+  font-weight: bolder;
+  font-style: italic;
+  color: chocolate;
+}
