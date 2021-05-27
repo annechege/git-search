@@ -1,12 +1,13 @@
 
 <app-search (emitSearch)="searchGit($event)"></app-search><br>
-<img id="avatar" src="{{Users.avatar_url}}" alt="profile pic" height="100px" width="100px">
+<div class="avatar">
+<img src="{{Users.avatar_url}}" alt="profile pic" height="250px" width="250px">
                 <p>Username: <strong>{{Users.login}}</strong></p>
                 <p>Followers: <strong>{{Users.followers}}</strong></p>
                 <p>Following: <strong>{{Users.followers}}</strong></p>
                 <p>Public Repositories: <strong>{{Users.public_repos}}</strong></p>
                 <p>Location: <strong>{{Users.location}}</strong></p>
-
+</div>
         <div *ngIf='Repos'>
                   <div *ngFor='let repo of Repos'>
                         <h3>{{repo.name}}</h3>
