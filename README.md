@@ -1,4 +1,4 @@
-# Quote-App
+# GitSearch
 ## Author
 Anne Chege
 ## Description
