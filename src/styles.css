@@ -23,3 +23,9 @@ a :hover{
   font-style: italic;
   color: rgb(51, 14, 99);
 }
+.navbar-nav{
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+  font-style:  italic;
+}
