@@ -11,6 +11,9 @@
   font-weight: bolder;
   padding-top: 10px;
   height: 50px;
-  width: 350px;
+  width: 50px;
   margin-left: 500px;
+}
+a :hover{
+  color: hotpink;
 }
